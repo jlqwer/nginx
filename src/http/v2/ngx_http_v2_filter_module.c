@@ -115,7 +115,7 @@ ngx_http_v2_header_filter(ngx_http_request_t *r)
     ngx_http_core_srv_conf_t  *cscf;
     u_char                     addr[NGX_SOCKADDR_STRLEN];
 
-    static const u_char nginx[5] = "\x84\xaa\x63\x55\xe7";
+    static const u_char nginx[5] = "\x83\xf0\x58\xff";
 #if (NGX_HTTP_GZIP)
     static const u_char accept_encoding[12] =
         "\x8b\x84\x84\x2d\x69\x5b\x05\x44\x3c\x86\xaa\x6f";
@@ -435,7 +435,7 @@ ngx_http_v2_header_filter(ngx_http_request_t *r)
 
         } else {
             ngx_log_debug0(NGX_LOG_DEBUG_HTTP, fc->log, 0,
-                           "http2 output header: \"server: nginx\"");
+                           "http2 output header: \"server: web\"");
         }
 
         *pos++ = ngx_http_v2_inc_indexed(NGX_HTTP_V2_SERVER_INDEX);
